@@ -1,22 +1,23 @@
-# Gêmeos Pitá e Goras
-# Pitá e Goras são irmãos gêmeos que amam matemática e gostam de aplicá-la em tudo o que vão fazer. Até mesmo na hora de comer eles utilizam números para definir o que vão jantar. Sua tarefa é ajudar os irmãos a implementarem um programa que os ajude a tomar a decisão do que irão jantar conforme o critério que eles estabeleceram. Para isso, os gêmeos decidiram que se a quantidade de minutos do relógio for um número par na hora que eles forem comer, então eles irão jantar arroz e feijão, mas se for um número ímpar eles irão fazer apenas um lanche.
+# Distância entre Pontos
+# Elabore uma função chamada distancia() que tem como parâmetros as coordenadas x1, y1, x2, y2, representando dois pontos no plano cartesiano. A função deve retornar a distância entre esses dois pontos como um número de ponto flutuante.
 #
 #
 # A Entrada consiste de:
-# Uma variável M do tipo inteiro representando os minutos do relógio.
+# Não há entrada para essa questão, só é necessário definir a função distancia() com parâmetros x1, y1, x2 e y2.
 #
 # A Saída deve apresentar:
-#
-# 1 linha contendo a frase “Fome de comida! Queremos arroz e feijão” para casos com números pares ou a frase "Só um lanchinho cai bem!" para os casos ímpares, sem as aspas conforme apresentado nos exemplos.
+# Não há saída para essa questão, só é necessário que a função retorne a distância entre os dois pontos.
 #
 # Observações:
-# Para a variável M serão considerados apenas valores entre 0  e 60 inclusive.
+# É garantido que os parâmetros serão sempre números inteiros, positivos, no intervalo [0;20]
+# Uma forma de realizar a operação de radiciação em Python é utilizar o operador de potenciação ** com índice fracionário, como por exemplo 1/2 para a raiz quadrada.
 #
 # Descrição dos Exemplos:
-# No primeiro exemplo, a saída corresponde ao caso da entrada par conforme solicitado no enunciado.
+# No primeiro exemplo, os pontos dados são (2,0) e (2,0). Considerando a fórmula para a distância entre dois pontos: Distância = ((2 - 2)² + (0 - 0)²)^1/2 = 0.0
+# No segundo exemplo, os pontos dados são (0,0) e (10,10). Considerando a fórmula para a distância entre dois pontos: Distância = ((10 - 0)² + (10 - 0)²)^1/2 = 14.142135623730951
+# No terceiro exemplo, os pontos dados são (1,5) e (1,10). Considerando a fórmula para a distância entre dois pontos: Distância = ((1 - 1)² + (10 - 5)²)^1/2 = 5.0
 
-M = int(input())
-if M % 2 == 0:
-    print("Fome de comida! Queremos arroz e feijão")
-else:
-    print("Só um lanchinho cai bem!")
+from math import sqrt
+def distancia(x1, y1, x2, y2):
+    res = sqrt((x1-x2)**2 + (y1 - y2)**2)
+    return res

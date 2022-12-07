@@ -1,36 +1,31 @@
-#
-# Média Aritmética, Ponderada e Harmônica
-# Escreva um programa que leia 3 números inteiros positivos e efetue o cálculo das médias Aritmética (A), Ponderada (P) e Harmônica (H) dependendo da letra dada pelo usuário, mostre qual o tipo de média e qual o valor da média. No caso do usuário digitar qualquer outro caractere, apresente a mensagem 'Operacao inexistente'.
+# O maior entre 3
+# Uma característica importante das funções é que elas permitem realizar chamadas a outras funções durante sua execução. Dispondo de uma função chamada max2() que recebe os parâmetros a e b, dois números inteiros e retorna o maior valor entre eles, crie uma nova função max3() que receba os parâmetros a, b e c, três números inteiros e retorne o maior valor entre eles. Lembre-se que o processo para verificar o maior de 3 números pode ser quebrado em verificar o maior de dois números exatamente duas vezes.
 #
 #
 # A Entrada consiste de:
-# Linha contendo as três notas que são três números reais positivos.
-# Linha contendo um caractere (para determinar qual a média), sendo (P) Ponderada, (H) Harmônica e (A) Aritmética
-# Caso o caractere seja 'P', deve-se solicitar os três pesos de cada nota enviada, que são números positivos inteiros.
+# Não há entrada para esse problema, apenas crie a função max3() com parâmetros a, b e c.
 #
 # A Saída deve apresentar:
-# Na primeira linha, o tipo de média que ele fez ("Harmonica", "Ponderada", "Aritmetica" ou "Operacao inexistente")
-# Na segunda linha, caso tenha sido digito um caractere válido, o resultado da média com precisão de 2 casas decimais.
+# Não há saída para esse problema, a função deve retornar apenas o maior número dentre os três.
 #
 # Observações:
-# Não é necessário validar se os valores de entrada estão dentro dos intervalos e tipos definidos.
+# Não é necessário validar se os valores da função são do tipo definido.
+# Utilizar-se da função max2() já implementada pode tornar a solução do problema mais simples.
 #
 # Descrição dos Exemplos:
-# Os exemplos são autoexplicativos.
+# No primeiro exemplo, pode-se verificar, por exemplo, que 1 é maior que 2. Comparando o valor encontrado 2 com  o restante 3, a função retorna corretamente que o maior valor encontrado é 3.
+# No segundo exemplo, pode-se verificar, por exemplo, que 7 é igual a 7, portanto, portanto, o maior entre os dois valores é o próprio 7. Comparando o valor encontrado 7 com o restante 7, a função retorna corretamente que o maior valor encontrado é 7.
+# No terceiro exemplo, pode-se verificar, por exemplo, que -1 é maior que -2. Comparando o valor encontrado -1 com o valor restante -3, a função retorna corretamente que o maior valor encontrado é -1.
 
-n1, n2, n3 = map(int, input().split())
-media_nome = str(input())
-if media_nome == "P":
-    p1, p2, p3 = map(int, input().split())
+def max2(a, b):
+    if a > b:
+        return a
+    else:
+        return b
 
-    print("Ponderada")
-    print(f"{((p1 * n1 + p2 * n2 + p3 * n3) / (p1 + p2 + p3)):.2f}")
-elif (media_nome == "H"):
-    print("Harmonica")
 
-    print(f"{(3 / ((1 / n1) + (1 / n2) + (1 / n3))):.2f}")
-elif (media_nome == "A"):
-    print("Aritmetica")
-    print(f"{((n1 + n2 + n3) / 3):.2f}")
-else:
-    print("Operacao inexistente")
+def max3(a, b, c):
+    x = max2(a, b)
+    y = max2(x, c)
+    return y
+

@@ -1,44 +1,25 @@
-# Bomba relógio
-# No treinamento do departamento de bombas da polícia, é preciso ser rápido para desarmar a bomba antes que ela exploda. Todos os policiais do setor possuem um tempo recorde em que eles conseguem desarmar a bomba, além disso cada bomba conta com um relógio regressivo que realiza a contagem de tempo que falta para a explosão. Porém, o programador do setor decidiu instalar travas de segurança nas bombas. De maneira que se o tempo recorde que o policial leva para desarmar uma bomba for maior que o tempo em que ela explode, a bomba é desativada automaticamente no último segundo antes de explodir. Caso o tempo recorde seja menor, o relógio segue com a contagem regressiva normalmente e portanto a bomba explode.
+# Livro de Colorir
+# Malu é uma artista renomada que, inspirada pelos sucessos dos livros de colorir para adultos decidiu criar ela mesma o seu próprio. Acontece que a arte de Malu tem um estilo muito peculiar: suas obras seguem um método estrito para serem produzidas, e ela deseja transmitir esse método através do seu livro de colorir.
 #
-# Implemente um programa que simule um relógio regressivo e a cada segundo informe quanto tempo falta com a frase “ Atenção faltam n segundos...”. Faltando apenas 5 segundos ele deve mostrar a mensagem: “Seu tempo está acabando”, no último segundo, caso a bomba seja desativada a frase a ser apresentada é “Bomba desativada automaticamente!” e se encerra a contagem regressiva, se não apresenta a frase “Seja rápido. Falta apenas 1 segundo” e antes de explodir, no segundo 0,  a frase “Cabum!! Explodiu”.
+# Considere que o livro elaborado por Malu terá sempre um quadriculado, com número igual de linhas e de colunas. No exato centro desse quadriculado haverá o caractere '⚫' simbolizando o ponto de início da coloração. Partindo do centro, a cada espaço do quadriculado será atribuído um número inteiro representando a distância deste espaço ao centro da figura. No entanto, para que a figura obtida seja satisfatória, Malu não permite que a distância entre um dado espaço vazio e o centro seja calculado considerando um caminho diagonal. É sempre necessário calcular a distância considerando um deslocamento horizontal e em seguida um deslocamento vertical, e a distância entre um espaço vazio e o centro é sempre a menor possível seguindo esses regras.
+#
+# A maior parte do programa para gerar essas artes já está pronto, mas Malu ainda não implementou a função calcula_distancia(), que recebe as coordenadas x e y do espaço vazio na matrix, e as coordenadas xc e yc do centro da figura e retorna um inteiro representando a distância entre esse espaço e o centro, considerando as regras impostas por Malu.
+#
+# Elabore a função calcula_distancia() que obtém a distância conforme especificado pelas regras de Malu e retorna um número inteiro representando a distância calculada.
 #
 #
 # A Entrada consiste de:
-# Duas variáveis do tipo inteiro, uma variável N (0<=N<=100) que indica o tempo inicial do relógio e uma P (0<=P<=100) que indica o tempo recorde do policial.
+# Não há entrada para essa questão. A função calcula_distancia() recebe parâmetros x, y, xc, e yc, todos inteiros positivos representando uma posição no quadriculado.
 #
 # A Saída deve apresentar:
-# A contagem regressiva e as frases, "Seu tempo está acabando" no 5 segundo, "Bomba desativada automaticamente!" para casos em que for desativada, "Seja rápido. Falta apenas 1 segundo" e "Cabum!! Diga adeus ao mundo" caso não seja desativada.
+# Não há saída para essa questão. A função calcula_distancia() deve retornar apenas um número inteiro representando a distância calculada conforme as regras de Malu.
 #
 # Observações:
-# Não é necessário validar se os valores de entrada são do tipo definido.
+# Não é necessário validar se os valores dos parâmetros são do tipo definido.
+# É apenas necessário definir a função calcula_distancia().
+# O nome deve necessariamente ser digitado como exposto no corpo da questão.
+# Essa distãncia tamb´me é conhecida como distância Manhattan.
 #
 # Descrição dos Exemplos:
-# No primeiro exemplo, mesmo com o tempo do policial sendo maior que o da bomba, ainda assim ela explode pelo tempo ser 0.
-# No segundo caso de teste vemos a contagem regressiva dos segundos e no 5 segundo a frase indicada. Como o tempo do policial é menor que o da bomba a trava de segurança não para a explosão e portanto a bomba explode.
-# No terceiro caso de teste como o tempo do policial é maior que o da bomba, ela é desativada antes de explodir.
+# Os exemplos são auto-explicativos.
 
-
-tempo_bomba = int(input())
-tempo_recorde_bombeiro = int(input())
-if tempo_bomba == 0:
-    print("Cabum!!!! Explodiu")
-    exit()
-
-if tempo_bomba > tempo_recorde_bombeiro:
-    for i in range(tempo_bomba, -1, -1):
-        if i == 0:
-            print("Cabum!!!! Explodiu")
-            break
-        if i == 1:
-            print("Seja rápido. Falta 1 segundo")
-
-        else:
-            print(f"Atenção faltam {i} segundos...") if i != 5 else print("Seu tempo está acabando!")
-else:
-    for i in range(tempo_bomba, -1, -1):
-        if i == 1:
-            print("Bomba desativada automaticamente!")
-            break
-        else:
-            print(f"Atenção faltam {i} segundos...") if i != 5 else print("Seu tempo está acabando!")

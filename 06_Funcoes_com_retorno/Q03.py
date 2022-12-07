@@ -1,21 +1,21 @@
-# Carêncio está carente
-#
-# Nem sempre é fácil encontrar o amor da sua vida. Para Carêncio, um jovem solteiro que está se sentindo sozinho, aparentemente o mar não está para peixe. Como ele não possui uma vida movimentada o suficiente para encontrar alguém facilmente, seu amigo lhe indicou um aplicativo de namoro, o revolucionário "LovePertin". O aplicativo mostra sua localização e a de pessoas em uma raio de 1 km que podem se interessar pelo seu perfil. Porém, Carêncio acredita que o amor deve ser algo fácil e não tem tanta paciência para lutar por uma paixão, então decidiu que, a depender da distância que a pessoa estiver, não valeria a pena investir em um encontro. Sendo D a distância entre ele e a pessoa, ele determinou os seguintes critérios:
-#
-# D ≤ 100   : ''É o amor da minha vida!"
-# 100 < D ≤ 200 : "Talvez dê certo"
-# D > 200 : "Não vale a pena investir"
-# Como Carêncio tem feito sucesso no aplicativo, ele pediu sua ajuda na classificação de cada match que recebeu. Para isso implemente um programa que de acordo com a distância entre eles determina se vale ou não a pena investir no encontro respeitando os critérios estabelecidos por Carêncio.
-import math
-x1 = int(input())
-y1 = int(input())
-x2 = int(input())
-y2 = int(input())
-D = math.sqrt(((x2 - x1)**2)+((y2 - y1)**2))
 
-if D <= 100:
-    print("É o amor da minha vida!")
-if 100 < D <= 200:
-    print("Talvez dê certo")
-if D > 200:
-    print("Não vale a pena investir")
+# N-ésimo termo da PA
+# Elabore uma função n_termo() que recebe como parâmetros:  i o primeiro termo de uma progressão aritmética, r a razão dessa progressão aritmética e n seu número de termos e retorne o n-ésimo termo da PA.
+#
+#
+# A Entrada consiste de:
+# Não há entrada para essa questão, apenas os parâmetros da função n_termo(), i, r e n, três números inteiros.
+#
+# A Saída deve apresentar:
+# Não há saída para essa questão, apenas é necessário que a função retorne o n-ésimo da progressão aritmética.
+#
+# Observações:
+# Não é necessário validar se os valores dos parâmetros são do tipo definido.
+#
+# Descrição dos Exemplos:
+# No primeiro exemplo, a razão 1 é somada a si mesma 98 vezes. Em seguida esse resultado é somado ao termo inicial 1, para obter o centésimo termo, resultando em 100.
+# No segundo exemplo, a razão -1 é somada a si mesma 98 vezes. Em seguida esse resultado é somado ao termo inicial 100, para obter o centésimo termo, resultando em 1.
+# No terceiro exemplo, a razão  é -5. Essa razão é somada ao termo inicial 5 para obter o segundo termo, resultando em 0.
+
+def n_termo(i: int, r: int, n: int) -> int:
+    return i + (n - 1) * r

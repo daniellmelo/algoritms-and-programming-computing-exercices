@@ -1,25 +1,26 @@
-# Termos da sequência
-# Implemente uma função recursiva chamada imprimeTermos que receba um número inteiro n e imprima os termos da sequência n,n−2,n−4,...,0, isto é, os termos da sequência que começa pelo valor n e termina em 0, decrescendo de 2 em 2 valores.
+# Raízes da Equação
+# Elabore uma função raizes() que recebe como parâmetros os coeficientes a, b e c de uma equação de segundo grau ax²+bx+c e retorna a quantidade de raízes reais e distintas da equação. Em caso de não existirem raízes reais, a função deve retornar -1.
 #
 #
 # A Entrada consiste de:
-# A função recebe como parâmetro um único número inteiro n (2≤n≤109).
+# Não há entrada para essa questão. A função raizes() recebe três parâmetros: a, b e c que são números inteiros.
 #
 # A Saída deve apresentar:
-# os termos que compõem a sequência estabelecida, sendo que cada termo da sequência n,n−2,n−4,...,0 deve ser impresso em uma única linha.
+# Não há saída para essa questão. A função raizes() deve apenas retornar o número de raízes reais e distintas para a equação ax²+bx+c.
 #
 # Observações:
-# Não é necessário validar se os valores de entrada estão dentro dos intervalos e tipos definidos.
-# Atenção, a criação de uma função com o nome determinado pelo enunciado é fundamental para a prática do aluno e o Moodle irá descontar pontos caso a criação não tenha sido feita corretamente (sendo case-sensitive o nome da função).
-# Submeta SOMENTE o que foi solicitado.
+# Não é necessário validar se os valores dos parâmetros são do tipo definido.
 #
 # Descrição dos Exemplos:
-# No primeiro exemplo, a função recebe como parâmetro o número e portanto imprime 8, depois 8-2=6, e na sequência, 4, 2 e 0
+# No primeiro exemplo, a = 6, b = 11 e c = -35. Para esses coeficientes, delta assume o valor de 961, portanto há duas raízes reais e distintas para a equação e a função retorna o valor 2.
+# No segundo exemplo, a = 2 , b = 4 e c = 2. Para esses coeficientes, delta assume o valor de 0, portanto há duas raízes reais e iguais para a equação, e a função retorna o valor 1.
+# No terceiro exemplo, a = -4, b = -7 e c = -12 . Para esses coeficientes, delta assume o valor de -143, portanto não há raízes reais para a equação e a função retorna o valor -1.
 
-
-def imprimeTermos(n):
-    for i in range(n, 0, -2):
-        print(i)
-    print(0)
-
-
+from math import sqrt, pow
+def raizes(a:int, b:int, c:int) -> int:
+    delta = pow(b,2)- 4 * a * c
+    if delta == 0:
+        return 1
+    elif delta < 0:
+        return -1
+    return 2
